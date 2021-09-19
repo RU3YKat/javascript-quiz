@@ -1,0 +1,40 @@
+:root {
+  --light-purple: hsl(303, 100%, 50%);
+  --dark-purple: hsl(291, 100%, 28%);
+  --white: hsl(0, 100%, 100%);
+  --light-gray: hsl(0, 0%, 70%);
+  --black: hsl(0, 0%, 0%);
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+h3#highScores {
+  color: var(--light-purple);
+}
+
+h3#countDown {
+  color: var(--black);
+}
+
+#intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+#quiz {
+  display: flex;
+  flex-direction: column;
+}
+
+#quiz.question {
+  font-weight: bolder;
+}
+
+#quiz.answers {
+}
