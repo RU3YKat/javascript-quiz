@@ -6,6 +6,10 @@
   --black: hsl(0, 0%, 0%);
 }
 
+* {
+  margin: 10px;
+}
+
 header {
   display: flex;
   flex-direction: row;
@@ -16,25 +20,11 @@ h3#highScores {
   color: var(--light-purple);
 }
 
-h3#countDown {
+h3#timer {
   color: var(--black);
 }
 
 #intro {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
-}
-
-#quiz {
-  display: flex;
-  flex-direction: column;
-}
-
-#quiz.question {
-  font-weight: bolder;
-}
-
-#quiz.answers {
 }

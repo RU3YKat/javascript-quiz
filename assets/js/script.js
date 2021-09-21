@@ -2,77 +2,124 @@
 
 
 
-
-
 const questionList = [
     {
         question: "The condition in an if/else statement is enclosed with ____________.",
-        answers: ["1. quotes","2. curly brackets","3. parentheses","4. square brackets"],
-        correctAnswer: "3. parentheses",
+        a: "1. quotes",
+        b: "2. curly brackets",
+        c: "3. parentheses",
+        d: "4. square brackets",
+        answer: "3. parentheses"
     },
     {
         question: "Commonly used data types DO NOT include: ",
-        answers: ["1. strings","2. booleans","3. alerts","4. numbers"],
-        correctAnswer: "3. alerts",
+        a: "1. strings",
+        b: "2. booleans",
+        c: "3. alerts",
+        d: "4. numbers",
+        answer: "3. alerts"
     },
     {
         question: "Arrays in JavaScript can be used to store _____________.",
-        answers: ["1. numbers and strings","2. other arrays","3. booleans","4. all of the above"],
-        correctAnswer: "4. all of the above",
+        a: "1. numbers and strings",
+        b: "2. other arrays",
+        c: "3. booleans",
+        d: "4. all of the above",
+        answer: "4. all of the above"
     },
     {
         question: "A very useful tool used during development and debugging for printing content to the debugger is: ",
-        answers: ["1. JavaScript","2. terminal/bash","3. for loops","4. console.log()"],
-        correctAnswer: "4. console.log()",
+        a: "1. JavaScript",
+        b: "2. terminal/bash",
+        c: "3. for loops",
+        d: "4. console.log()",
+        answer: "4. console.log()"
     },
     {
         question: "String values must be enclosed within ____________ when being assigned to variables.",
-        answers: ["1. commas","2. curly brackets","3. quotes","4. parentheses"],
-        correctAnswer: "3. quotes",
+        a: "1. commas",
+        b: "2. curly brackets",
+        c: "3. quotes",
+        d: "4. parentheses",
+        answer: "3. quotes"
     }
     ];
-console.log(questionList[1]);
+
+
+
 
 // Display Intro Title and Text with Start Quiz button (including high scores and timer at 0, as global elements)
-function startGame() {
+function startIntro() {
     // dynamically insert intro text
-    let startText = document.getElementById("intro");
-        startText.setAttribute('style', 'text-align:center;');
-        startText.innerHTML = "<h1>Coding Quiz Challenge</h1><br/><h2>Try to answer the following code-related questions within the time limit.<br />Keep in mind that incorrect answers will penalize your score/time<br />by ten seconds!</h2>";
+    let introText = document.getElementById('intro');
+        introText.setAttribute('style', 'text-align:center;');
+        introText.innerHTML = "<h1>Coding Quiz Challenge</h1><br/><h2>Try to answer the following code-related questions within the time limit.<br />Keep in mind that incorrect answers will penalize your score/time<br />by ten seconds!</h2>";
 
     // dynamically insert start button
     let startBtn = document.createElement('button');
         startBtn.innerHTML = 'Start Quiz';
         startBtn.style.background = 'hsl(291, 100%, 28%)';
         startBtn.style.color = 'hsl(0, 100%, 100%)';
-        document.body.appendChild(startBtn);
+        startBtn.style.width = '20%';
+        startBtn.style.margin = '0 40%';
+        
+    document.getElementById('intro').appendChild(startBtn);
 
-    startBtn.addEventListener("click", askQuestion());
-
-}
+    startBtn.addEventListener('click', startGame());
+    
+};
 
 // Clicked Start Quiz button, Intro text display:none, Question 1 and choices appear, Timer starts at 75
-function changeScreen() {
-    // turns display: none for startGame function text
+function startGame() {
 
-    // turns display: flex for askQuestion function text
+    function changeScreen() {
+        var hideContent = document.getElementById('intro');
+            hideContent.style.display = 'none';
+        // var hideContent = document.getElementsByClassName('button');
+        //     hideContent.style.display = 'none';
+        
+    };
+};
+    // function askQuestion() {
+    //     for (i = 0; i < questionList.length; i++) {
+    //         // array containing questions
 
-}
-
-function askQuestion() {
-    for (i = 0; i < questionList.length; i++) {
-        // array containing questions
-
-    }
-}
-
-function startTimer() {
-
-}
+    //     }
+    // }
 
 
-startGame();
+    // function timer() {
+    //     var timer = document.getElementById('timer');
+    //     function countdown() {
+    //         var timeLeft = 75;
+    //         // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
+    //         var timeInterval = setInterval(function() {
+    //         // As long as the `timeLeft` is greater than 1
+    //         if (timeLeft > 1) {
+    //             // Set the `textContent` of `timerEl` to show the remaining seconds
+    //             timer.textContent = timeLeft + ' seconds remaining';
+    //             // Decrement `timeLeft` by 1
+    //             timeLeft--;
+    //         } else if (timeLeft === 1) {
+    //             // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
+    //             timer.textContent = timeLeft + ' second remaining';
+    //             timeLeft--;
+    //         } else {
+    //             // Once `timeLeft` gets to 0, set `timerEl` to an empty string
+    //             timer.textContent = '';
+    //             // Use `clearInterval()` to stop the timer
+    //             clearInterval(timeInterval);
+    //         }
+    //         }, 1000);
+    //     }
+    // };
 
+    
+    
+    // function startTimer() {
+
+    // 
+startIntro();
 // One answer button is clicked, compared to correctAnswer
 
 
@@ -108,32 +155,3 @@ startGame();
             // a. go to next question
     
 
-
-// function to start game, welcome to quiz, start button
-    // classes 
-    // question container in html (class=hide, display=none), question container remove attribute
-
-    // how to get JUST the question to show
-    // how to get JUST the answers to show
-
-// function for timer, text content of time
-
-// create q container(hide)
-// create a container(hide)
-
-// getQuestion function
-// getAnswer function
-
-// how to make intro hide, start button hide
-
-// questions show, answers show, timer appears and starts
-
-// show question 1, answers populate (in their title section ....)
-
-// for loop for each, index 0 for current question
-
-// current question from array (i = 0), i++, loop through questions/choices.  element = array i
-
-// fnc to compare event.target.value to questions.correctanswer
-
-// generate dynamically data-questions, data
