@@ -1,47 +1,56 @@
+const questionEl = document.getElementById("question");
+const answerEl = document.getElementById("answers");
+let currentQuestionIndex = 0;
 
+function displayQuestion() {
+    questionEl.textContent = questionList[currentQuestionIndex].question;
+}
 
+function displayAnswers() {
+    for (i = 0; i < questionList[currentQuestionIndex].answers.length; i++) {
+        const button = document.createElement("button");
+        button.onclick = checkAnswer;
+        button.textContent = questionList[currentQuestionIndex].answers[i];
+        answerEl.appendChild(button);
+    }
+}
 
+function checkAnswer() {
+    if (questionList[currentQuestionIndex].correctAnswer === this.textContent) {
+        console.log("right");
+        document.getElementById("quizResponse").textContent = "Correct!";
+    } else {
+        document.getElementById("quizResponse").textContent = "Wrong!";
+    } 
+    console.log("the button is clicked!");
+    
+}
 
 const questionList = [
     {
         question: "The condition in an if/else statement is enclosed with ____________.",
-        a: "1. quotes",
-        b: "2. curly brackets",
-        c: "3. parentheses",
-        d: "4. square brackets",
-        answer: "3. parentheses"
+        answers: ["1. quotes", "2. curly brackets", "3. parentheses", "4. square brackets"],
+        correctAnswer: "3. parentheses"
     },
     {
         question: "Commonly used data types DO NOT include: ",
-        a: "1. strings",
-        b: "2. booleans",
-        c: "3. alerts",
-        d: "4. numbers",
-        answer: "3. alerts"
+        answers: ["1. strings", "2. booleans", "3. alerts", "4. numbers"],
+        correctAnswer: "3. alerts"
     },
     {
         question: "Arrays in JavaScript can be used to store _____________.",
-        a: "1. numbers and strings",
-        b: "2. other arrays",
-        c: "3. booleans",
-        d: "4. all of the above",
-        answer: "4. all of the above"
+        answers: ["1. numbers and strings", "2. other arrays", "3. booleans", "4. all of the above"],
+        correctAnswer: "4. all of the above"
     },
     {
         question: "A very useful tool used during development and debugging for printing content to the debugger is: ",
-        a: "1. JavaScript",
-        b: "2. terminal/bash",
-        c: "3. for loops",
-        d: "4. console.log()",
-        answer: "4. console.log()"
+        answers: ["1. JavaScript", "2. terminal/bash", "3. for loops", "4. console.log()"],
+        correctAnswer: "4. console.log()"
     },
     {
         question: "String values must be enclosed within ____________ when being assigned to variables.",
-        a: "1. commas",
-        b: "2. curly brackets",
-        c: "3. quotes",
-        d: "4. parentheses",
-        answer: "3. quotes"
+        answers: ["1. commas", "2. curly brackets", "3. quotes", "4. parentheses"],
+        correctAnswer: "3. quotes"
     }
     ];
 
@@ -65,20 +74,18 @@ function startIntro() {
         
     document.getElementById('intro').appendChild(startBtn);
 
-    startBtn.addEventListener('click', startGame());
+    startBtn.addEventListener('click', startGame);
     
 };
 
 // Clicked Start Quiz button, Intro text display:none, Question 1 and choices appear, Timer starts at 75
 function startGame() {
 
-    function changeScreen() {
         var hideContent = document.getElementById('intro');
             hideContent.style.display = 'none';
-        // var hideContent = document.getElementsByClassName('button');
-        //     hideContent.style.display = 'none';
-        
-    };
+      
+    displayQuestion();
+    displayAnswers();
 };
     // function askQuestion() {
     //     for (i = 0; i < questionList.length; i++) {
